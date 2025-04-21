@@ -9,11 +9,11 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
 A Flutter plugin for handling dynamic links
                        DESC
-  s.homepage         = 'http://example.com'
+  s.homepage         = 'https://github.com/truenary/sojolink_pkg'
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'Your Company' => 'email@example.com' }
   s.source           = { :path => '.' }
-  s.source_files = 'Classes/**/*'
+  s.source_files = 'Sources/sojo_link/**/*'
   s.dependency 'Flutter'
   s.platform = :ios, '12.0'
 
