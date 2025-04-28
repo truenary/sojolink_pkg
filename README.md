@@ -1,6 +1,7 @@
 # sojo_link
 
-A Flutter plugin for handling dynamic links using SojoLink
+Firebase Dynamic Links is shutting down in August 2025. SojoLink is your solution.
+With this package you can quickly migration existing Firebase Dynamic Links to SojoLink.
 
 [![pub package](https://img.shields.io/pub/v/sojo_link.svg)](https://pub.dev/packages/sojo_link)
 
