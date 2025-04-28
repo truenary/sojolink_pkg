@@ -101,11 +101,15 @@ public class SojoLinkPlugin implements FlutterPlugin, MethodCallHandler, Activit
         String baseUrl = linkUri.getScheme() + "://" + linkUri.getHost() + linkUri.getPath();
 
         Map<String, String> utmParameters = new HashMap<>();
-        String utmCampaignId = linkUri.getQueryParameter("utm_campaign_id");
-
-        // Extract UTM parameters
-        if (utmCampaignId != null && !utmCampaignId.trim().isEmpty()) {
-            utmParameters.put("utm_campaign_id", utmCampaignId);
+        
+        // Extract all UTM parameters
+        for (String key : linkUri.getQueryParameterNames()) {
+            if (key.startsWith("utm_")) {
+                String value = linkUri.getQueryParameter(key);
+                if (value != null && !value.trim().isEmpty()) {
+                    utmParameters.put(key, value);
+                }
+            }
         }
 
         // Build the complete link data
