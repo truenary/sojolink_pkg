@@ -88,8 +88,10 @@ public final class SojoLinkIosPlugin: NSObject, FlutterPlugin {
     let components = URLComponents(url: url, resolvingAgainstBaseURL: false)
     if let queryItems = components?.queryItems {
       for item in queryItems {
-        if item.name == "utm_campaign_id" {
-          utmParameters["utm_campaign_id"] = item.value
+        if item.name.starts(with: "utm_") {
+          if let value = item.value, !value.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            utmParameters[item.name] = value
+          }
         }
       }
     }
