@@ -1,6 +1,6 @@
 name: sojo_link
 description: "A Flutter plugin for handling dynamic links with SojoLink"
-version: 0.0.2
+version: 0.0.3
 homepage: https://sojolink.com/
 repository: https://github.com/truenary/sojolink_pkg
 
