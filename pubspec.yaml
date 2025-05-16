@@ -6,7 +6,7 @@ repository: https://github.com/truenary/sojolink_pkg
 
 environment:
   sdk: ">=3.5.3 <4.0.0"
-  flutter: '>=3.3.0'
+  flutter: ">=3.3.0"
 
 dependencies:
   flutter:
@@ -25,4 +25,4 @@ flutter:
         package: com.truenary.sojo_link
         pluginClass: SojoLinkPlugin
       ios:
-        pluginClass: SojoLinkPlugin
+        pluginClass: SojoLinkIosPlugin
