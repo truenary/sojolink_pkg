@@ -11,7 +11,7 @@
   "hooks": {
     "after:bump": [
       "chmod +x ./scripts/update_version.sh",
-      "./script/update_version.sh pubspec.yaml ${version}"
+      "./scripts/update_version.sh pubspec.yaml ${version}"
     ]
   },
   "git": {
