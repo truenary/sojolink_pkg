@@ -1,0 +1,64 @@
+name: Release Workflow
+on:
+  workflow_dispatch:
+    inputs:
+      release-type:
+        description: 'Specify release type: regular, alpha, beta, or rc'
+        required: true
+        default: 'regular'
+        type: choice
+        options:
+          - regular
+          - alpha
+          - beta
+          - rc
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    
+    # Grants permission to write to the repository
+    permissions:
+      contents: write  
+      actions: write   
+
+    # Sets the release type from the input
+    env:
+      RELEASE_TYPE: ${{ github.event.inputs.release-type }}  
+
+    steps:
+      - name: Validate branch
+        run: |
+          # Ensure that this workflow can only be run on the main branch
+          if [[ "${{ github.ref }}" != "refs/heads/main" ]]; then
+            echo "Error: This workflow can only be run on the main branch."
+            exit 1
+          fi
+          
+      - uses: actions/checkout@v4
+        with:
+          # Fetches all history for all branches and tags
+          fetch-depth: 0
+          # Uses a GitHub token for authentication
+          token: ${{ secrets.TOKEN_GITHUB }}  
+      
+      # Install node dependencies
+      - name: Install dependencies
+        run: npm ci  
+
+      # Configures Git user details for commits
+      - name: Set Git user
+        run: |
+          git config --global user.email "${{ secrets.GIT_USER_EMAIL }}"
+          git config --global user.name "${{ secrets.GIT_USER_NAME }}"
+      
+      # Runs release-it based on the specified release type
+      - name: Run release-it
+        run: |
+          if [ "$RELEASE_TYPE" == "regular" ]; then
+            npx release-it --ci  # Regular release
+          else
+            npx release-it --ci --preRelease="$RELEASE_TYPE"
+          fi
+        env:
+          # Passes the GitHub token to release-it
+          TOKEN_GITHUB: ${{ secrets.TOKEN_GITHUB }}

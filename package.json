@@ -1,0 +1,7 @@
+{
+  "name":"sojo_link",
+  "version": "0.0.3",
+  "devDependencies": {
+    "release-it": "^17.11.0"
+  }
+}
