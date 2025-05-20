@@ -1,5 +1,4 @@
 name: Release Workflow
-
 on:
   workflow_dispatch:
     inputs:
@@ -13,7 +12,6 @@ on:
           - alpha
           - beta
           - rc
-
 jobs:
   release:
     runs-on: ubuntu-latest

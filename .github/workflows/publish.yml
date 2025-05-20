@@ -1,11 +1,8 @@
-# publish.yml
 name: Publish Workflow
-
 on:
   push:
     tags:
       - 'v*'  # Only react to version tags
-
 jobs:
   publish:
     # Grants permissions for the job
