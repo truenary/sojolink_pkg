@@ -1,6 +1,6 @@
 name: sojo_link
 description: "An alternative to Firebase Dynamic Links which offers similar API and setup, enabling seamless migration with minimal code changes."
-version: 0.0.4
+version: 0.0.3
 homepage: https://sojolink.com/
 repository: https://github.com/truenary/sojolink_pkg
 
