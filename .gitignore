@@ -29,4 +29,3 @@ migrate_working_dir/
 build/
 .fvm/
 node_modules/
-package-lock.json
