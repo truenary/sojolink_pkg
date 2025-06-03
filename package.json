@@ -1,7 +1,8 @@
 {
-  "name":"sojo_link",
+  "name": "sojo_link",
   "version": "0.0.3",
   "devDependencies": {
+    "@release-it/conventional-changelog": "^9.0.4",
     "release-it": "^17.11.0"
   }
 }
