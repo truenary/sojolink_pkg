@@ -1,7 +1,3 @@
-## 0.0.4
-
-- Update package description
-
 ## 0.0.3
 
 - Added support for UTM tags
