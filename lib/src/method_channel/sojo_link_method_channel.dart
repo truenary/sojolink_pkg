@@ -5,7 +5,6 @@ import 'package:sojo_link/src/platform_interface/sojo_link_platform_interface.da
 
 /// An implementation of [SojoLinkPlatform] that uses method channels.
 class MethodChannelSojoLink extends SojoLinkPlatform {
-
   /// The [MethodChannel] used to communicate with the native plugin
   static MethodChannel channel = const MethodChannel(
     'sojo_dynamic_links',
