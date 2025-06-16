@@ -1,9 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-
-
-  test('getPlatformVersion', () async {
-//TODO test implementation
-  });
+  test('getPlatformVersion', () async {});
 }
