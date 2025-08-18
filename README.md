@@ -3,7 +3,6 @@
 An alternative to Firebase Dynamic Links which offers similar API and setup, enabling seamless migration with minimal code changes.
 
 Firebase Dynamic Links is shutting down in August 2025. SojoLink is your solution.
-With this package you can quickly migration existing Firebase Dynamic Links to SojoLink.
 
 [![pub package](https://img.shields.io/pub/v/sojo_link.svg)](https://pub.dev/packages/sojo_link)
 
