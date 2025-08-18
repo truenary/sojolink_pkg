@@ -3,7 +3,6 @@ import 'package:sojo_link/src/pending_dynamic_link.dart';
 import 'package:sojo_link/src/platform_interface/sojo_link_platform_interface.dart';
 
 class SojoLink extends PlatformInterface {
-
   //Initialize SojoLink
   static final Object _token = Object();
   SojoLink._() : super(token: _token);
@@ -16,7 +15,8 @@ class SojoLink extends PlatformInterface {
   SojoLinkPlatform? _delegatePackingProperty;
 
   SojoLinkPlatform get _delegate {
-    return _delegatePackingProperty ??= SojoLinkPlatform.instanceFor(); // Ensure the delegate instance is properly initialized
+    return _delegatePackingProperty ??= SojoLinkPlatform
+        .instanceFor(); // Ensure the delegate instance is properly initialized
   }
 
   /// Stream of dynamic link events.

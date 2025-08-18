@@ -1,11 +1,9 @@
-
 /// Provides data from received dynamic link.
 class PendingDynamicLinkData {
   const PendingDynamicLinkData({
     required this.link,
     this.utmParameters = const {},
   });
-
 
   /// Deep link parameter of the dynamic link.
   final Uri link;
